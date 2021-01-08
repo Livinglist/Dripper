@@ -15,6 +15,7 @@
 		5E1C6577258C20BF0066DAB7 /* Days.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C6575258C20BF0066DAB7 /* Days.xcdatamodeld */; };
 		5E1C6582258C20C00066DAB7 /* DaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C6581258C20C00066DAB7 /* DaysTests.swift */; };
 		5E1C658D258C20C00066DAB7 /* DaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C658C258C20C00066DAB7 /* DaysUITests.swift */; };
+		5E5EDC3625A7D40700E383ED /* TextEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5EDC3525A7D40700E383ED /* TextEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5E1C6588258C20C00066DAB7 /* DaysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaysUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1C658C258C20C00066DAB7 /* DaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUITests.swift; sourceTree = "<group>"; };
 		5E1C658E258C20C00066DAB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E5EDC3525A7D40700E383ED /* TextEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				5E1C6578258C20BF0066DAB7 /* Info.plist */,
 				5E1C6575258C20BF0066DAB7 /* Days.xcdatamodeld */,
 				5E1C6570258C20BF0066DAB7 /* Preview Content */,
+				5E5EDC3525A7D40700E383ED /* TextEditView.swift */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				5E1C656D258C20BE0066DAB7 /* ContentView.swift in Sources */,
 				5E1C6577258C20BF0066DAB7 /* Days.xcdatamodeld in Sources */,
 				5E1C656B258C20BE0066DAB7 /* DaysApp.swift in Sources */,
+				5E5EDC3625A7D40700E383ED /* TextEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Days/Preview Content\"";
 				DEVELOPMENT_TEAM = QMWX3X2NF7;
@@ -435,8 +440,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jiaqifeng.Days;
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = jiaqifeng.days;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -447,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Days/Preview Content\"";
 				DEVELOPMENT_TEAM = QMWX3X2NF7;
@@ -457,8 +465,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jiaqifeng.Days;
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = jiaqifeng.days;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
