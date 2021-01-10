@@ -24,23 +24,24 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                
-                ForEach((0...items.count-1), id: \.self) {
-                    let curItem = items[$0]
-                    
-                    
-                    if $0 == 0 {
-                        ItemView(curItem, withDateLabel: true)
-                    }else{
-                        if curItem.timestamp!.month != items[$0-1].timestamp!.month {
+                if !items.isEmpty{
+                    ForEach((0...items.count-1), id: \.self) {
+                        let curItem = items[$0]
+                        
+                        
+                        if $0 == 0 {
                             ItemView(curItem, withDateLabel: true)
                         }else{
-                            ItemView( curItem)
-                            //Text("asd")
+                            if curItem.timestamp!.month != items[$0-1].timestamp!.month {
+                                ItemView(curItem, withDateLabel: true)
+                            }else{
+                                ItemView( curItem)
+                                //Text("asd")
+                            }
                         }
                     }
+                    .onDelete(perform: deleteItems)
                 }
-                .onDelete(perform: deleteItems)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
