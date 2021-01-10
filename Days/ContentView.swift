@@ -11,7 +11,7 @@ import CoreData
 struct ContentView: View {
     let defaults = UserDefaults.standard
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)],
         animation: .default)
@@ -20,22 +20,32 @@ struct ContentView: View {
     @State private var showModal = false
     
     @State private var txt: String = "Empty"
-
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
-                    VStack{
-                        Text("\(item.text ?? "this is a test")").frame(maxWidth: .infinity,alignment:.leading)
-                        Text("\(item.timestamp!, formatter: itemFormatter)").font(.footnote).foregroundColor(.gray).frame(maxWidth: .infinity,alignment:.trailing)
-                    }.frame(alignment: .leading)
+                
+                ForEach((0...items.count-1), id: \.self) {
+                    let curItem = items[$0]
+                    
+                    
+                    if $0 == 0 {
+                        ItemView(curItem, withDateLabel: true)
+                    }else{
+                        if curItem.timestamp!.month != items[$0-1].timestamp!.month {
+                            ItemView(curItem, withDateLabel: true)
+                        }else{
+                            ItemView( curItem)
+                            //Text("asd")
+                        }
+                    }
                 }
                 .onDelete(perform: deleteItems)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     #if os(iOS)
-                    EditButton()
+                    //EditButton()
                     #endif
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -44,6 +54,8 @@ struct ContentView: View {
                     }
                 }
             }
+            
+            
         }.sheet(isPresented: $showModal, onDismiss: {
             print(self.showModal)
         }) {
@@ -57,45 +69,30 @@ struct ContentView: View {
                 newItem.text = "My first time using this app!"
             }
         }
-//        List {
-//            ForEach(items) { item in
-//                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-//            }
-//            .onDelete(perform: deleteItems)
-//        }
-//        .toolbar {
-//            #if os(iOS)
-//            EditButton()
-//            #endif
-//
-//            Button(action: addItem) {
-//                Label("Add Item", systemImage: "plus")
-//            }
-//        }
     }
-
+    
     private func addItem() {
         self.showModal = true
-//        withAnimation {
-//            let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
-//            newItem.text = txt
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
+        //        withAnimation {
+        //            let newItem = Item(context: viewContext)
+        //            newItem.timestamp = Date()
+        //            newItem.text = txt
+        //
+        //            do {
+        //                try viewContext.save()
+        //            } catch {
+        //                // Replace this implementation with code to handle the error appropriately.
+        //                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        //                let nsError = error as NSError
+        //                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        //            }
+        //        }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {

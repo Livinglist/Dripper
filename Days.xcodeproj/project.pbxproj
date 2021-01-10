@@ -16,6 +16,9 @@
 		5E1C6582258C20C00066DAB7 /* DaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C6581258C20C00066DAB7 /* DaysTests.swift */; };
 		5E1C658D258C20C00066DAB7 /* DaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C658C258C20C00066DAB7 /* DaysUITests.swift */; };
 		5E5EDC3625A7D40700E383ED /* TextEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5EDC3525A7D40700E383ED /* TextEditView.swift */; };
+		5E8DC7C925AACC2E00E56B18 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DC7C825AACC2E00E56B18 /* ImagePicker.swift */; };
+		5E8DC7D125AAE5C100E56B18 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DC7D025AAE5C100E56B18 /* ItemView.swift */; };
+		5E8DC7D625AAE90E00E56B18 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DC7D525AAE90E00E56B18 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		5E1C658C258C20C00066DAB7 /* DaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUITests.swift; sourceTree = "<group>"; };
 		5E1C658E258C20C00066DAB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E5EDC3525A7D40700E383ED /* TextEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditView.swift; sourceTree = "<group>"; };
+		5E8DC7C825AACC2E00E56B18 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5E8DC7D025AAE5C100E56B18 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		5E8DC7D525AAE90E00E56B18 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 				5E1C6575258C20BF0066DAB7 /* Days.xcdatamodeld */,
 				5E1C6570258C20BF0066DAB7 /* Preview Content */,
 				5E5EDC3525A7D40700E383ED /* TextEditView.swift */,
+				5E8DC7C825AACC2E00E56B18 /* ImagePicker.swift */,
+				5E8DC7D025AAE5C100E56B18 /* ItemView.swift */,
+				5E8DC7D525AAE90E00E56B18 /* DateExtension.swift */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -269,8 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1C6574258C20BF0066DAB7 /* Persistence.swift in Sources */,
+				5E8DC7D625AAE90E00E56B18 /* DateExtension.swift in Sources */,
 				5E1C656D258C20BE0066DAB7 /* ContentView.swift in Sources */,
 				5E1C6577258C20BF0066DAB7 /* Days.xcdatamodeld in Sources */,
+				5E8DC7C925AACC2E00E56B18 /* ImagePicker.swift in Sources */,
+				5E8DC7D125AAE5C100E56B18 /* ItemView.swift in Sources */,
 				5E1C656B258C20BE0066DAB7 /* DaysApp.swift in Sources */,
 				5E5EDC3625A7D40700E383ED /* TextEditView.swift in Sources */,
 			);
@@ -431,6 +443,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Days/Preview Content\"";
 				DEVELOPMENT_TEAM = QMWX3X2NF7;
 				ENABLE_PREVIEWS = YES;
@@ -456,6 +469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Days/Preview Content\"";
 				DEVELOPMENT_TEAM = QMWX3X2NF7;
 				ENABLE_PREVIEWS = YES;
