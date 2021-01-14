@@ -17,6 +17,11 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \DeletedItem.timestamp, ascending: false)],
+        animation: .default)
+    private var deletedItems: FetchedResults<DeletedItem>
+    
     @State private var showModal = false
     
     @State private var txt: String = "Empty"
@@ -45,6 +50,14 @@ struct ContentView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink(destination:TrashCanView()) {
+                        Button(action: {
+                            
+                        }, label: {
+                            Label("Trash Can", systemImage: "trash")
+                        })
+                                    }
+                    
                     #if os(iOS)
                     //EditButton()
                     #endif
@@ -100,7 +113,14 @@ struct ContentView: View {
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { items[$0] }.forEach {item in
+                let deletedItem = DeletedItem(context: viewContext)
+                deletedItem.text = item.text
+                deletedItem.timestamp = item.timestamp
+                deletedItem.imageData = item.imageData
+                
+                viewContext.delete(item)
+            }
             
             do {
                 try viewContext.save()

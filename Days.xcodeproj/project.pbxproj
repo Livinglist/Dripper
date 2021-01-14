@@ -19,6 +19,8 @@
 		5E8DC7C925AACC2E00E56B18 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DC7C825AACC2E00E56B18 /* ImagePicker.swift */; };
 		5E8DC7D125AAE5C100E56B18 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DC7D025AAE5C100E56B18 /* ItemView.swift */; };
 		5E8DC7D625AAE90E00E56B18 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DC7D525AAE90E00E56B18 /* DateExtension.swift */; };
+		5EF5184225AFCE050050C4D4 /* TrashCanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5184125AFCE050050C4D4 /* TrashCanView.swift */; };
+		5EF5184725AFD0290050C4D4 /* DeletedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5184625AFD0290050C4D4 /* DeletedItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		5E8DC7C825AACC2E00E56B18 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5E8DC7D025AAE5C100E56B18 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		5E8DC7D525AAE90E00E56B18 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		5EF5184125AFCE050050C4D4 /* TrashCanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashCanView.swift; sourceTree = "<group>"; };
+		5EF5184625AFD0290050C4D4 /* DeletedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				5E8DC7C825AACC2E00E56B18 /* ImagePicker.swift */,
 				5E8DC7D025AAE5C100E56B18 /* ItemView.swift */,
 				5E8DC7D525AAE90E00E56B18 /* DateExtension.swift */,
+				5EF5184125AFCE050050C4D4 /* TrashCanView.swift */,
+				5EF5184625AFD0290050C4D4 /* DeletedItemView.swift */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -278,11 +284,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1C6574258C20BF0066DAB7 /* Persistence.swift in Sources */,
+				5EF5184725AFD0290050C4D4 /* DeletedItemView.swift in Sources */,
 				5E8DC7D625AAE90E00E56B18 /* DateExtension.swift in Sources */,
 				5E1C656D258C20BE0066DAB7 /* ContentView.swift in Sources */,
 				5E1C6577258C20BF0066DAB7 /* Days.xcdatamodeld in Sources */,
 				5E8DC7C925AACC2E00E56B18 /* ImagePicker.swift in Sources */,
 				5E8DC7D125AAE5C100E56B18 /* ItemView.swift in Sources */,
+				5EF5184225AFCE050050C4D4 /* TrashCanView.swift in Sources */,
 				5E1C656B258C20BE0066DAB7 /* DaysApp.swift in Sources */,
 				5E5EDC3625A7D40700E383ED /* TextEditView.swift in Sources */,
 			);
