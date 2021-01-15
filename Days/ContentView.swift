@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import WidgetKit
 
 struct ContentView: View {
     let defaults = UserDefaults.standard
@@ -35,12 +36,12 @@ struct ContentView: View {
                         
                         
                         if $0 == 0 {
-                            ItemView(curItem, withDateLabel: true)
+                            ItemView(curItem, withDateLabel: true).contextMenu{buildMenuItems(curItem: curItem)}
                         }else{
                             if curItem.timestamp!.month != items[$0-1].timestamp!.month {
-                                ItemView(curItem, withDateLabel: true)
+                                ItemView(curItem, withDateLabel: true).contextMenu{buildMenuItems(curItem: curItem)}
                             }else{
-                                ItemView( curItem)
+                                ItemView( curItem).contextMenu{buildMenuItems(curItem: curItem)}
                                 //Text("asd")
                             }
                         }
@@ -56,7 +57,7 @@ struct ContentView: View {
                         }, label: {
                             Label("Trash Can", systemImage: "trash")
                         })
-                                    }
+                    }
                     
                     #if os(iOS)
                     //EditButton()
@@ -90,6 +91,17 @@ struct ContentView: View {
                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
             }
+        }
+    }
+    
+    @ViewBuilder
+    func buildMenuItems(curItem: Item) -> some View{
+        Group {
+            Button("Show on Widget", action: {
+                defaults.setValue(true, forKey: "userHasSet")
+                defaults.setValue(curItem.text, forKey: "widgetContent")
+                WidgetCenter.shared.reloadAllTimelines()
+            })
         }
     }
     
